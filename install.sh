@@ -21,3 +21,6 @@ mkdir ~/.vim/
 cp -r ./nvim/* ~/.vim/
 rm ~/.vim/init.vim
 cp ./nvim/init.vim ~/.vimrc
+
+# BASHRC
+cp ./bashrc_server_settings/.bashrc ~/.bashrc
