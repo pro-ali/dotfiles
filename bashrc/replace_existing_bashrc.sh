@@ -11,11 +11,11 @@
 function replace_bashrc () {
     # QUALITY CHECKING -----------------------------------------------------
     echo "checking if good argument (root_dir) given..."
-    if ([ -z "$1" ] && [ ! 1 -eq "$#" ])
+    if ([ -z "$1" ] && [ 1 != "$#" ])
     then
         echo
         echo "argument given = \"$1\""
-        exit 1
+		return 1
     else
         root_dir=$1
     fi
