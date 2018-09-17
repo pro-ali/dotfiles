@@ -22,8 +22,8 @@ function replace_bashrc () {
 		repo_bashrc_path="`pwd`/.bashrc"
 
 		echo "# > replacement and backup .bashrc..."
-		mv $bashrc_path $bashrc_path_bkp
-		cp $repo_bashrc_path $bashrc_path
+		cp $bashrc_path $bashrc_path_bkp
+		cp "$repo_bashrc_path" "$bashrc_path"
 
 		echo "# > de-clutter variables..."
 		unset bashrc_path
