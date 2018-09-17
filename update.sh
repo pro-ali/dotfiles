@@ -15,9 +15,8 @@ DOTFILES_ROOT_DIR="$PWD"
 
 
 # PACKAGES AND COMMANDS ------------------------------------------------------
-echo
-echo "UPDATING BASHRC"
-echo "---------------"
+printf "\nUPDATING BASHRC\n"
+printf "---------------\n"
 source ./bashrc/replace_existing_bashrc.sh
 replace_bashrc "$DOTFILES_ROOT_DIR"
 

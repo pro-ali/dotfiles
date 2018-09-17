@@ -10,49 +10,54 @@
 
 function replace_bashrc () {
     # QUALITY CHECKING -----------------------------------------------------
-    echo "checking if good argument (root_dir) given..."
-    if ([ -z "$1" ] && [ 1 != "$#" ])
-    then
-        echo
-        echo "argument given = \"$1\""
-		return 1
-    else
-        root_dir=$1
-    fi
+	printf "\nFUNCTION: ./bashrc/replace_existing_bashrc.replace_bashrc()\n"
+    printf "\n\tARGS_QUALITY_CHECK...\n"
 
+	[ -z "$1" ] && echo "ROOT_DIR ARG LEN == 0 " && exit 1
 
-    if [ -f "./halt_action" ]
-    then
-        echo
-        echo "WILL NOT ALTER LOCAL .BASHRC FILES ..."
+	[ 1 -ne "$1" ]  &&
+		echo "ARG_COUNG != 1 FOR replace_existing_bashrc.replace_bashrc()" &&
+		exit 1
 
-    # MAIN PART ------------------------------------------------------------
-        # VARIABLES --------------------------------------------------------
-        echo "function: replace_bashrc()..."
-        echo "# > variables"
-        bashrc_path="$HOME/.bashrc"
-        bashrc_path_bkp="$HOME/.bashrc.bkp"
-        repo_bashrc_path="$root_dir/bashrc/.bashrc"
+    [ -f "./halt_action" ] &&
+		echo "\"root_dir/halt_action\" file absent. " &&
+		echo "It is required to update the bashrc package." &&
+		exit 1
 
-        # FILE MANIPULATION ------------------------------------------------
-        echo "# > replacement and backup .bashrc..."
-        if [ -f $bashrc_path ]
-        then
-            echo "# >>> .bashrc exists so backing up then copying..."
-            cp "$bashrc_path" "$bashrc_path_bkp"
-            cp "$repo_bashrc_path" "$bashrc_path"
-        else
-            echo "# >>> .bashrc NON-EXITENT so copying only..."
-            cp "$repo_bashrc_path" "$bashrc_path"
+	# VARIABLES --------------------------------------------------------
+	printf "\n\tVARIABLE_PREPARATION:\n"
+	root_dir="$1"
+	repo_bashrc_path="$root_dir/bashrc/.bashrc"
+	bashrc_path="$HOME/.bashrc"
+	bashrc_path_bkp="$HOME/.bashrc.bkp"
 
-        fi
+	printf "\t    - root_dir         = $root_dir\n"
+	printf "\t    - repo_bashrc_path = $repo_bashrc_path\n"
+	printf "\t    - bashrc_path      = $bashrc_path\n"
+	printf "\t    - bashrc_path_bkp  = $bashrc_path_bkp\n"
 
-        # DECLUTTERING VARIABLES -------------------------------------------
-        echo "# > de-clutter variables..."
-        unset bashrc_path
-        unset bashrc_path_bkp
-        unset repo_bashrc_path
-    fi
+	printf
+
+	# FILE MANIPULATION ------------------------------------------------
+	printf "\n\tFILE_MANIPULATION:\n"
+	if [ -f $bashrc_path ]
+	then
+		printf "\t   - .bashrc exists so backing up then copying...\n"
+		cp "$bashrc_path" "$bashrc_path_bkp"
+		cp "$repo_bashrc_path" "$bashrc_path"
+	else
+		printf "\t   - .bashrc NON-EXITENT so copying only...\n"
+		cp "$repo_bashrc_path" "$bashrc_path"
+
+	fi
+
+	# DECLUTTERING VARIABLES -------------------------------------------
+	printf "\n\tDECLUTTERING_VARIABLES:\n"
+	unset bashrc_path
+	unset bashrc_path_bkp
+	unset repo_bashrc_path
+
+	printf "\n\tPACKAGE_UPDATED: bashrc"
 
     return 0
 }
