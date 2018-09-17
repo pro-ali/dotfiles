@@ -29,6 +29,8 @@
 			call dein#add('easymotion/vim-easymotion',    {'if': 1,})
 			call dein#add('airblade/vim-rooter',          {'if': 1,})
 			call dein#add('mattn/emmet-vim',              {'if': 1,})
+			call dein#add('rafi/awesome-vim-colorschemes', {'if': 1,})
+			call dein#add('qualiabyte/vim-colorstepper', {'if': 1,})
 		call dein#end()
 		call dein#save_state()
 		endif
@@ -64,6 +66,11 @@
 			set scrolloff=8
 			set sidescrolloff=15
 			set sidescroll=1
+
+		" COLORSCHEMES ----------------------------------------------------------
+		" -----------------------------------------------------------------------
+			"colorscheme PaperColor
+			colorscheme blue
 
 		" HIGHLIGHTING CONFIGS --------------------------------------------------
 		" -----------------------------------------------------------------------
@@ -370,3 +377,9 @@
         let g:rooter_patterns = ['Rakefile', '.git/']
         let g:rooter_use_lcd = 1
         let g:rooter_resolve_links = 1
+
+    " VIM-COLORSTEPPER ------------------------------------------------------
+    " -----------------------------------------------------------------------
+		nmap <F6> <Plug>ColorstepPrev
+		nmap <F7> <Plug>ColorstepNext
+		nmap <S-F7> <Plug>ColorstepReload
