@@ -15,7 +15,7 @@ function replace_bashrc () {
 
 	[ -z "$1" ] && echo "ROOT_DIR ARG LEN == 0 " && exit 1
 
-	[ 1 -ne "$1" ]  &&
+	[ "$1" -ne 1 ]  &&
 		echo "ARG_COUNG != 1 FOR replace_existing_bashrc.replace_bashrc()" &&
 		exit 1
 
@@ -31,10 +31,10 @@ function replace_bashrc () {
 	bashrc_path="$HOME/.bashrc"
 	bashrc_path_bkp="$HOME/.bashrc.bkp"
 
-	printf "\t    - root_dir         = $root_dir\n"
-	printf "\t    - repo_bashrc_path = $repo_bashrc_path\n"
-	printf "\t    - bashrc_path      = $bashrc_path\n"
-	printf "\t    - bashrc_path_bkp  = $bashrc_path_bkp\n"
+	printf "\t    + root_dir         = $root_dir\n"
+	printf "\t    + repo_bashrc_path = $repo_bashrc_path\n"
+	printf "\t    + bashrc_path      = $bashrc_path\n"
+	printf "\t    + bashrc_path_bkp  = $bashrc_path_bkp\n"
 
 	printf
 
@@ -42,11 +42,11 @@ function replace_bashrc () {
 	printf "\n\tFILE_MANIPULATION:\n"
 	if [ -f $bashrc_path ]
 	then
-		printf "\t   - .bashrc exists so backing up then copying...\n"
+		printf "\t   + .bashrc exists so backing up then copying...\n"
 		cp "$bashrc_path" "$bashrc_path_bkp"
 		cp "$repo_bashrc_path" "$bashrc_path"
 	else
-		printf "\t   - .bashrc NON-EXITENT so copying only...\n"
+		printf "\t   + .bashrc NON-EXITENT so copying only...\n"
 		cp "$repo_bashrc_path" "$bashrc_path"
 
 	fi
