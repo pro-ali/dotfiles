@@ -119,9 +119,12 @@ fi
 # USER SETTINGS BELOW -------------------------------------------------------
 # ---------------------------------------------------------------------------
 
-    # SWAP <CAPS> AND <ESC> KEYS --------------------------------------------
+	# SWAP <CAPS> AND <ESC> KEYS ( print out errors ) -----------------------
     # -----------------------------------------------------------------------
-        /usr/bin/setxkbmap -option "caps:swapescape"
+		setxkbmap -option "caps:swapescape" &&
+			[ $? > 0 ] &&
+			echo &&
+			echo "UNABLE TO SWAP 'caps:swapescape' with setxkbmap"
 
     # PREVENT HISTORY SAVE WITH SPACE BEFORE COMMAND ------------------------
     # -----------------------------------------------------------------------
@@ -156,8 +159,9 @@ fi
 
 	# GIT ---------------------------------------------------------------------
 	# -------------------------------------------------------------------------
-		alias g_update="git push -u origin master"
-		alias g_fetch="git clone https://github.com/pro-ali/dotfiles.git"
+		alias gpom="git pull origin master"
+		alias gst="git status"
+		alias gu="git push -u origin master"
 
 	# VIM OR NVIM -------------------------------------------------------------
 	# -------------------------------------------------------------------------
