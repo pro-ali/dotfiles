@@ -15,7 +15,7 @@ function replace_bashrc () {
 
 	[ -z "$1" ] && echo "ROOT_DIR ARG LEN == 0 " && exit 1
 
-	[ "$1" -ne 1 ]  &&
+	[ "$#" -ne 1 ]  &&
 		echo "ARG_COUNG != 1 FOR replace_existing_bashrc.replace_bashrc()" &&
 		exit 1
 

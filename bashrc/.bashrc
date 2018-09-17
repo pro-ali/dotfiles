@@ -119,12 +119,12 @@ fi
 # USER SETTINGS BELOW -------------------------------------------------------
 # ---------------------------------------------------------------------------
 
-	# SWAP <CAPS> AND <ESC> KEYS ( print out errors ) -----------------------
+    # SWAP <CAPS> AND <ESC> KEYS ( print out errors ) -----------------------
     # -----------------------------------------------------------------------
-		setxkbmap -option "caps:swapescape" &&
-			[ $? > 0 ] &&
-			echo &&
-			echo "UNABLE TO SWAP 'caps:swapescape' with setxkbmap"
+        setxkbmap -option "caps:swapescape" &&
+            [ $? > 0 ] &&
+            echo &&
+            echo "UNABLE TO SWAP 'caps:swapescape' with setxkbmap"
 
     # PREVENT HISTORY SAVE WITH SPACE BEFORE COMMAND ------------------------
     # -----------------------------------------------------------------------
@@ -149,30 +149,39 @@ fi
             echo "counter: $counter"
         }
 
-	# CRONTAB ------------------------------------------------------------------
-	# --------------------------------------------------------------------------
-		alias ec="crontab -u $USER -e"
+    # CRONTAB ------------------------------------------------------------------
+    # --------------------------------------------------------------------------
+        alias ec="crontab -u $USER -e"
 
-	# APACHE2 SERVER SHORTCUTS ------------------------------------------------
-	# -------------------------------------------------------------------------
-		alias runApache="sudo service apache2 start"
+    # APACHE2 SERVER SHORTCUTS ------------------------------------------------
+    # -------------------------------------------------------------------------
+        alias runApache="sudo service apache2 start"
 
-	# GIT ---------------------------------------------------------------------
-	# -------------------------------------------------------------------------
-		alias gplom="git pull origin master"
-		alias gst="git status"
-		alias gpu="git push -u origin master"
+    # GIT ---------------------------------------------------------------------
+    # -------------------------------------------------------------------------
+        alias gplom="git pull origin master"
+        alias gst="git status"
+        alias gpu="git push -u origin master"
+        
+        # UPDATING TOOLS ----------------------------------------------------
+			function git_repo_update () {
+				gplom
+				bash update.sh
+				return 0
+			}
+			alias gru="git_repo_update"
 
-	# VIM OR NVIM -------------------------------------------------------------
-	# -------------------------------------------------------------------------
-		if [ -f /usr/bin/nvim ]; then
-			alias v="nvim"
-		else
-			alias v="vim"
-		fi
 
-	# BASH COLORSCHEME --------------------------------------------------------
-	# -------------------------------------------------------------------------
-		# >> replace blue with purple if nvim inactive
-		[ ! -f "/user/bin/nvim" ] && LS_COLORS=$LS_COLORS:'di=0;35:' &&
-			export LS_COLORS ;
+    # VIM OR NVIM -------------------------------------------------------------
+    # -------------------------------------------------------------------------
+        if [ -f /usr/bin/nvim ]; then
+            alias v="nvim"
+        else
+            alias v="vim"
+        fi
+
+    # BASH COLORSCHEME --------------------------------------------------------
+    # -------------------------------------------------------------------------
+        # >> replace blue with purple if nvim inactive
+        [ ! -f "/user/bin/nvim" ] && LS_COLORS=$LS_COLORS:'di=0;35:' &&
+            export LS_COLORS ;
