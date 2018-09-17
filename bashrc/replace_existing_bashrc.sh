@@ -36,7 +36,6 @@ function replace_bashrc () {
 	printf "\t    + bashrc_path      = $bashrc_path\n"
 	printf "\t    + bashrc_path_bkp  = $bashrc_path_bkp\n"
 
-	printf
 
 	# FILE MANIPULATION ------------------------------------------------
 	printf "\n\tFILE_MANIPULATION:\n"
@@ -53,6 +52,7 @@ function replace_bashrc () {
 
 	# DECLUTTERING VARIABLES -------------------------------------------
 	printf "\n\tDECLUTTERING_VARIABLES:\n"
+	unset root_dir
 	unset bashrc_path
 	unset bashrc_path_bkp
 	unset repo_bashrc_path
