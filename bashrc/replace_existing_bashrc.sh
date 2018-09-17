@@ -49,9 +49,11 @@ function replace_bashrc () {
 		cp "$repo_bashrc_path" "$bashrc_path"
 
 	fi
+	printf "\n\tSOURCING_BASHRC...\n"
+	source ~/.bashrc
 
 	# DECLUTTERING VARIABLES -------------------------------------------
-	printf "\n\tDECLUTTERING_VARIABLES:\n"
+	printf "\n\tDECLUTTERING_VARIABLES...\n"
 	unset root_dir
 	unset bashrc_path
 	unset bashrc_path_bkp
