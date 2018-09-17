@@ -166,3 +166,9 @@ fi
 		else
 			alias v="vim"
 		fi
+
+	# BASH COLORSCHEME --------------------------------------------------------
+	# -------------------------------------------------------------------------
+		# >> replace blue with purple if nvim inactive
+		[ ! -f "/user/bin/nvim" ] && LS_COLORS=$LS_COLORS:'di=0;35:' &&
+			export LS_COLORS ;
