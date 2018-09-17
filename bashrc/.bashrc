@@ -159,9 +159,9 @@ fi
 
 	# GIT ---------------------------------------------------------------------
 	# -------------------------------------------------------------------------
-		alias gpom="git pull origin master"
+		alias gplom="git pull origin master"
 		alias gst="git status"
-		alias gu="git push -u origin master"
+		alias gpu="git push -u origin master"
 
 	# VIM OR NVIM -------------------------------------------------------------
 	# -------------------------------------------------------------------------
