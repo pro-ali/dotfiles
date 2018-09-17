@@ -15,11 +15,17 @@ DOTFILES_ROOT_DIR="$PWD"
 
 
 # PACKAGES AND COMMANDS ------------------------------------------------------
+
 printf "\nUPDATING BASHRC\n"
 printf "****************\n"
 source ./bashrc/replace_existing_bashrc.sh
 replace_bashrc "$DOTFILES_ROOT_DIR"
 
+printf "\nUPDATING VIM\n"
+printf "************\n"
+printf "\n\tSYNCHRONISING VIM FILES...\n"
+cp -r "$DOTFILES_ROOT_DIR/vim/*" "$HOME/"
+printf "\tvim synced...\n"
 
 # script not to be sourced
 exit 0
