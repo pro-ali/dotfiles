@@ -57,7 +57,7 @@ function replace_bashrc () {
 	unset bashrc_path_bkp
 	unset repo_bashrc_path
 
-	printf "\n\tPACKAGE_UPDATED: bashrc"
+	printf "\n\tPACKAGE_UPDATED: bashrc\n"
 
     return 0
 }
