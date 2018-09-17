@@ -32,7 +32,7 @@ function replace_bashrc () {
         echo "# > variables"
         bashrc_path="$HOME/.bashrc"
         bashrc_path_bkp="$HOME/.bashrc.bkp"
-        repo_bashrc_path="$root_dir/.bashrc"
+        repo_bashrc_path="$root_dir/bashrc/.bashrc"
 
         # FILE MANIPULATION ------------------------------------------------
         echo "# > replacement and backup .bashrc..."
