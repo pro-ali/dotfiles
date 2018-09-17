@@ -41,11 +41,11 @@ function replace_bashrc () {
 	printf "\n\tFILE_MANIPULATION:\n"
 	if [ -f $bashrc_path ]
 	then
-		printf "\t   + .bashrc exists so backing up then copying...\n"
+		printf "\t    + .bashrc exists so backing up then copying...\n"
 		cp "$bashrc_path" "$bashrc_path_bkp"
 		cp "$repo_bashrc_path" "$bashrc_path"
 	else
-		printf "\t   + .bashrc NON-EXITENT so copying only...\n"
+		printf "\t    + .bashrc NON-EXITENT so copying only...\n"
 		cp "$repo_bashrc_path" "$bashrc_path"
 
 	fi
