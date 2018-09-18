@@ -10,7 +10,7 @@
 
 
 # SOURCE --------------------------------------------------------------------
-	source ./.util_constants.sh
+	source ./utils/.util_constants.sh
 		# USED CONSTANTS
 		# --------------
 		#	DOTFILES_ROOT_DIR
@@ -22,7 +22,7 @@
 		#   DEIN_INSTALLER_URL
 		#   DEIN_INSTALLER_PATH
 
-	source ./.util_functions.sh
+	source ./utils/.util_functions.sh
 		# USED FUNCTIONS
 		# --------------
 		#	install_apt_command
@@ -35,7 +35,7 @@ echo
 # SCRIPT USAGE CONTROL ( only run if file [./.permit_update] exists ) ------
     [ ! -f "./.permit_update" ] &&
         echo "\"root_dir/.permit_update\" file absent. " &&
-        echo "It is required to execute update.sh." &&
+        echo "It is required to execute update.sh." && echo &&
         exit 1;
 	echo "PROCEEDING WITH ./update.sh script"
 
