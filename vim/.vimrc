@@ -29,6 +29,8 @@
 			call dein#add('easymotion/vim-easymotion',    {'if': 1,})
 			call dein#add('airblade/vim-rooter',          {'if': 1,})
 			call dein#add('mattn/emmet-vim',              {'if': 1,})
+			call dein#add('rafi/awesome-vim-colorschemes',{'if': 1,})
+			call dein#add('vim-scripts/CycleColor',		  {'if': 1,})
 		call dein#end()
 		call dein#save_state()
 		endif
@@ -58,6 +60,7 @@
 			set splitright
 			set ignorecase
 			set incsearch
+			colorscheme PaperColor
 
 		" SCROLL CONTROLS--------------------------------------------------------
 		" -----------------------------------------------------------------------
@@ -86,11 +89,11 @@
 				"autocmd InsertLeave * :set relativenumber
 				"au BufReadCmd   *.epub      call zip#Browse(expand("<amatch>"))
 				autocmd BufNewFile *.c		0r ~/.vim/templates/skeleton.c
+				autocmd BufNewFile *.sh		0r ~/.vim/templates/skeleton.sh
 				autocmd BufNewFile *.py		0r ~/.vim/templates/skeleton.py
 				autocmd BufNewFile *.cpp	0r ~/.vim/templates/skeleton.cpp
 				autocmd BufNewFile *.php	0r ~/.vim/templates/skeleton.php
 				autocmd BufNewFile *.html	0r ~/.vim/templates/skeleton.html
-				autocmd BufNewFile *.py		0r ~/.vim/templates/skeleton.py
 			augroup END
 
 
