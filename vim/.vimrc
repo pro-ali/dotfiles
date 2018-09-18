@@ -21,7 +21,7 @@
 			call dein#add('SirVer/ultisnips',             {'if': 1,})
 			call dein#add('honza/vim-snippets',           {'if': 1,})
 			call dein#add('python-mode/python-mode',      {'if': 1,})
-			call dein#add('Shougo/deol.nvim',             {'rev': 'a1b5108fd'})
+			"call dein#add('Shougo/deol.nvim',             {'rev': 'a1b5108fd'})
 			call dein#add('majutsushi/tagbar',            {'if': 1,})
 			call dein#add('ctrlpvim/ctrlp.vim',           {'if': 1,}, {'for': 'tex',})
 			call dein#add('tpope/vim-capslock',           {'if': 1,})
