@@ -18,7 +18,7 @@
 	VIM_TARGET_DIR_PATH="$HOME/.vim"
 	VIM_REPO_DIR_PATH="./vim/.vim"
 
-	DEIN_CACHE_DIR="$VIM_TARGET_DIR_PATH/dein"
+	DEIN_CACHE_DIR="$HOME/.dein"
 	DEIN_INSTALLER_PATH="$DEIN_CACHE_DIR/installer.sh"
 	DEIN_INSTALLER_URL="https://raw.githubusercontent.com/Shougo/dein.vim/master/bin/installer.sh"
 

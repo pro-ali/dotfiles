@@ -8,10 +8,10 @@
 
 	" DEIN CONFIGURATION (plugin mangager) --------------------------------------
 	" ---------------------------------------------------------------------------
-		set runtimepath+=~/.vim/dein/repos/github.com/Shougo/dein.vim
-		if dein#load_state('~/.vim/dein/')
-		call dein#begin('~/.vim/dein/')
-			call dein#add('~/.vim/dein/repos/github.com/Shougo/dein.vim')
+		set runtimepath+=~/.dein/repos/github.com/Shougo/dein.vim
+		if dein#load_state('~/.dein/')
+		call dein#begin('~/.dein/')
+			call dein#add('~/.dein/repos/github.com/Shougo/dein.vim')
 			call dein#add('Shougo/neosnippet.vim',        {'if': 1,})
 			call dein#add('Shougo/neosnippet-snippets',   {'if': 1,})
 			call dein#add('scrooloose/nerdcommenter',     {'if': 1,})
