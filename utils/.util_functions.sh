@@ -54,9 +54,8 @@ function check_dir_exists () {
     [ ! -d "$dir_path" ] &&
         echo &&
         echo "ERROR CHECK_DIR_EXISTS: $func_name"  &&
-        echo "     -  func doing check = $func_name"  &&
-        echo "     - dir being checked = $dir_path"  &&
-        echo "     -    dir_path given = $argument_count"  &&
+        echo "     -   check dir_path = $dir_path"  &&
+        echo "     - func doing check = $func_name"  &&
         exit 1
     return 0
 }
