@@ -9,12 +9,6 @@
 # =========================================================================== #
 
 
-# SCRIPT USAGE CONTROL ( only run if file [./proceed_with_action] exists ) --
-    [ -f "./proceed_with_action" ] &&
-        echo "\"root_dir/proceed_with_action\" file absent. " &&
-        echo "It is required to update the bashrc package." &&
-        exit 1
-
 # SOURCE --------------------------------------------------------------------
 	source ./.util_constants.sh
 		# USED CONSTANTS
@@ -38,12 +32,20 @@
 
 
 echo
+# SCRIPT USAGE CONTROL ( only run if file [./.permit_update] exists ) ------
+    [ ! -f "./.permit_update" ] &&
+        echo "\"root_dir/.permit_update\" file absent. " &&
+        echo "It is required to execute update.sh." &&
+        exit 1;
+	echo "PROCEEDING WITH ./update.sh script"
+
+
 # CHECK AND INSTALL PROGRAMMES ---------------------------------------------
 	install_apt_command "tree"
 	install_apt_command "curl"
 
 
-# PACKAGES AND COMMANDS -----------------------------------------------------
+# PACKAGES AND COMMANDS ----------------------------------------------------
 
     print_title "# BASHRC PACKAGE --------------------------------------------------------"
     replace_bashrc "$DOTFILES_ROOT_DIR"; echo
