@@ -60,7 +60,8 @@
 			set splitright
 			set ignorecase
 			set incsearch
-			colorscheme PaperColor
+			"colorscheme PaperColor
+			colorscheme default
 
 		" SCROLL CONTROLS--------------------------------------------------------
 		" -----------------------------------------------------------------------

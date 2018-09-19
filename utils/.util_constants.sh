@@ -26,7 +26,7 @@
 	DEIN_GITHUB_REPODIR="$DEIN_CACHE_DIR/repos/github.com"
 	
 	# SOURCE https://github.com/Valloric/YouCompleteMe#ubuntu-linux-x64
-	VALLORIC_REPO_DIR="$DEIN_CACHE_DIR/repos/Valloric"
+	VALLORIC_REPO_DIR="$DEIN_CACHE_DIR/repos/github.com/Valloric"
 	YCM_REPO_DIR="$VALLORIC_REPO_DIR/YouCompleteMe"
 	YCM_GIT_REQUEST_DIR="$YCM_REPO_DIR/third_party/requests_futures/.git"
 	YCM_DEPENDENCY_INSTALL_STRING="sudo apt -y install build-essential cmake python-dev python3-dev"
