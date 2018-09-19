@@ -55,10 +55,10 @@ echo
 	echo "2-- SYNC ~/.vim/..";	 sync_dir 	$VIM_TARGET_DIR_PATH 	$VIM_REPO_DIR_PATH; echo
 	echo "3-- CHECK DEIN INSTALLATION" &&
 		if [ ! -d "$DEIN_CACHE_DIR" ]; then
-			echo "   :INSTALLING DEIN TO: $DEIN_CACHE_DIR"
-			mkdir -p $DEIN_CACHE_DIR
-			curl $DEIN_INSTALLER_URL > $DEIN_INSTALLER_PATH
-			sh $DEIN_INSTALLER_PATH $DEIN_CACHE_DIR
+			echo "   :INSTALLING DEIN TO: $DEIN_CACHE_DIR" &&
+				mkdir -p $DEIN_CACHE_DIR &&
+				curl $DEIN_INSTALLER_URL > $DEIN_INSTALLER_PATH &&
+				sh $DEIN_INSTALLER_PATH $DEIN_CACHE_DIR
 		else
 			echo "   :DEIN EXISTS SO NOT INSTALLING:"
 		fi; echo
